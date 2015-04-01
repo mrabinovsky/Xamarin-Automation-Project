@@ -13,7 +13,6 @@ phpini = "c:\\xampp\\php\\php.ini"
 
 print ("Downloading XAMPP 5.6.3")
 
-# Download the file from `url` and save it locally under `file_name`:
 #with urllib.request.urlopen(xamppurl) as response, open(file_name, 'wb') as out_file:
 #    shutil.copyfileobj(response, out_file)
 	
@@ -45,4 +44,15 @@ subprocess.call("move /y composer.phar c:\\xampp\\php")
 open("composer.bat", "w")
 file.write("@ECHO OFF\n php \"c:\\xampp\\php\\composer.phar\" %*")
 file.close()
+
+setpath = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
+                             '-ExecutionPolicy',
+                             'Unrestricted',
+                             './setpath.ps1'], cwd=os.getcwd())
+result = setpath.wait()
+
+print("Composer Installed\n")
+print("Starting PayPal app install")
+
+execfile("paypal.py")
 
