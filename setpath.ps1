@@ -1,1 +1,0 @@
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\xammp\php", [EnvironmentVariableTartget::Machine)
