@@ -11,3 +11,4 @@ What the script does:
 Downloads xampp, uncompressed it, changes some settings, gets dependencies for the web app and runs the second script paypal.py 
 paypal.py gets the app, finishes setting up the dependencies, creates a DB, sets up the tables, and finally runs the app.
 
+firewall-delete.py is just to undue the custom firewall rules for testing purposes (it does not restore the default windows rules though, for that I recommend exporting them first)

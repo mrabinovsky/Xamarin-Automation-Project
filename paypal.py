@@ -14,8 +14,8 @@ sqlsettings = "C:\\xampp\\htdocs\\rest-api-sample-app-php-master\\app\\bootstrap
 
 print ("Downloading PayPal App")
 
-#with urllib.request.urlopen(paypalurl) as response, open(file_name, 'wb') as out_file:
-#    shutil.copyfileobj(response, out_file)
+with urllib.request.urlopen(paypalurl) as response, open(file_name, 'wb') as out_file:
+    shutil.copyfileobj(response, out_file)
 	
 print ("Download Done\n")
 print ("Unzipping PayPal")
@@ -36,8 +36,8 @@ subprocess.call("move /y composer.json c:\\xampp\\htdocs\\rest-api-sample-app-ph
 
 print ("Creating MySQL DB")
 
-#db = _mysql.connect(host="localhost",user="root",passwd="")
-#db.query('CREATE DATABASE paypal_pizza_app;')
+db = _mysql.connect(host="localhost",user="root",passwd="")
+db.query('CREATE DATABASE paypal_pizza_app;')
 
 print ("Done creating MySQL DB!\n")
 print ("Configuring MySQL")

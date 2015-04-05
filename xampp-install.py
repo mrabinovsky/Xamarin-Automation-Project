@@ -15,32 +15,32 @@ phpini = "c:\\xampp\\php\\php.ini"
 
 print ("Downloading XAMPP 5.6.3")
 
-#with urllib.request.urlopen(xamppurl) as response, open(file_name_xampp, 'wb') as out_file:
-#    shutil.copyfileobj(response, out_file)
+with urllib.request.urlopen(xamppurl) as response, open(file_name_xampp, 'wb') as out_file:
+    shutil.copyfileobj(response, out_file)
 	
 print ("Download Done\n")
 print ("Unzipping XAMPP")
 
-#with zipfile.ZipFile(file_name_xampp, "r") as z:
-#    z.extractall(dest_dir)
+with zipfile.ZipFile(file_name_xampp, "r") as z:
+    z.extractall(dest_dir)
 		
 print ("Done Unzipping!\n")
 print("Enabling OpenSSL")
 
-#for line in fileinput.input(phpini, inplace=True):
-#    print(line.replace(";extension=php_openssl.dll", "extension=php_openssl.dll"), end='')
+for line in fileinput.input(phpini, inplace=True):
+    print(line.replace(";extension=php_openssl.dll", "extension=php_openssl.dll"), end='')
 	
 print("OpenSSL Enabled\n")
 print("Enabling Curl")
 
-#for line in fileinput.input(phpini, inplace=True):
-#   print(line.replace(";extension=php_curl.dll", "extension=php_curl.dll"), end='')
+for line in fileinput.input(phpini, inplace=True):
+   print(line.replace(";extension=php_curl.dll", "extension=php_curl.dll"), end='')
 	
 print("Curl Enabled\n")
 print("Installing Composer")
 
-#with urllib.request.urlopen(composerurl) as response, open("composer.phar", 'wb') as out_file:
-#    shutil.copyfileobj(response, out_file)
+with urllib.request.urlopen(composerurl) as response, open("composer.phar", 'wb') as out_file:
+    shutil.copyfileobj(response, out_file)
 	
 subprocess.call("move /y composer.phar c:\\xampp\\php", shell=True)
 with open("composer.bat", "w") as f:
