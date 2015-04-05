@@ -1,8 +1,8 @@
 import subprocess
 
 #Block all inbound connections
-subprocess.call('"netsh advfirewall set allprofiles firewallpolicy blockinbound,allowoutbound"', shell=True)
-subprocess.call('"netsh advfirewall firewall delete rule name=all dir=in"', shell=True)
+subprocess.call('netsh advfirewall set allprofiles firewallpolicy blockinbound,allowoutbound', shell=True)
+subprocess.call('netsh advfirewall firewall delete rule name=all dir=in', shell=True)
 
 #allow connections over port 80 and 443 tcp
 subprocess.call('netsh advfirewall firewall add rule name="allow port 80 tcp in" dir=in localport=80 protocol=tcp action=allow', shell=True)
