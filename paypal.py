@@ -31,6 +31,8 @@ subprocess.call("move /y c:\\xampp\\htdocs\\rest-api-sample-app-php-master\\comp
 subprocess.call("c:\\xampp\\htdocs\\rest-api-sample-app-php-master\\composer.bat update")
 subprocess.call("move /y vendor c:\\xampp\\htdocs\\rest-api-sample-app-php-master", shell=True)
 subprocess.call("move /y composer.lock c:\\xampp\\htdocs\\rest-api-sample-app-php-master", shell=True)
+subprocess.call("move /y composer.json c:\\xampp\\htdocs\\rest-api-sample-app-php-master", shell=True)
+
 
 print ("Creating MySQL DB")
 
